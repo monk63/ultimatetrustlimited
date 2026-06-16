@@ -4110,7 +4110,7 @@ label {
   top: 0;
   height: 100%;
   width: 33.33%;
-  background: #ffb600;
+  background: #9a7352;
   border-radius: 2px;
   transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transform: translateX(0);
@@ -4126,8 +4126,8 @@ label {
   height: 44px;
   border: none;
   border-radius: 8px;
-  background: #ffb600; ;
-  color: #040403;
+  background: #9a7352;
+  color: #ffb600;
   font-size: 14px;
   cursor: pointer;
   display: flex;
@@ -4137,7 +4137,7 @@ label {
 }
 
 .utl-testimonials-btn:hover {
-  background: #ffb600;
+  background: #7d5c42;
 }
 
 .utl-testimonials-btn:disabled {

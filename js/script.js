@@ -259,6 +259,58 @@ jQuery(function ($) {
 		}
 		mediaPopup();
 
+		// UTL testimonials carousel
+		function utlTestimonialsCarousel() {
+			var track = document.getElementById('utlTestimonialsTrack');
+			var progressBar = document.getElementById('utlTestimonialsProgress');
+			var prevBtn = document.getElementById('utlTestimonialsPrev');
+			var nextBtn = document.getElementById('utlTestimonialsNext');
+
+			if (!track || !progressBar || !prevBtn || !nextBtn) {
+				return;
+			}
+
+			var cards = track.querySelectorAll('.utl-testimonial-card');
+			var currentIndex = 0;
+			var total = cards.length;
+
+			function getSlideOffset() {
+				if (!cards.length) {
+					return 0;
+				}
+				var cardWidth = cards[0].offsetWidth;
+				var gap = parseFloat(window.getComputedStyle(track).gap) || 24;
+				return currentIndex * (cardWidth + gap);
+			}
+
+			function updateCarousel() {
+				track.style.transform = 'translateX(-' + getSlideOffset() + 'px)';
+				var segmentWidth = 100 / total;
+				progressBar.style.width = segmentWidth + '%';
+				progressBar.style.transform = 'translateX(' + (currentIndex * 100) + '%)';
+				prevBtn.disabled = currentIndex === 0;
+				nextBtn.disabled = currentIndex === total - 1;
+			}
+
+			prevBtn.addEventListener('click', function () {
+				if (currentIndex > 0) {
+					currentIndex -= 1;
+					updateCarousel();
+				}
+			});
+
+			nextBtn.addEventListener('click', function () {
+				if (currentIndex < total - 1) {
+					currentIndex += 1;
+					updateCarousel();
+				}
+			});
+
+			window.addEventListener('resize', updateCarousel);
+			updateCarousel();
+		}
+		utlTestimonialsCarousel();
+
 	});
 
 

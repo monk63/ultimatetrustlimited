@@ -669,7 +669,121 @@ ul.top-info li p.info-text {
 
 .header-one,
 .header-one .site-navigation {
-  background: #23282d;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.header-one ul.navbar-nav > li > a {
+  color: #23282d !important;
+}
+
+.header-one .site-navigation .logo {
+  padding: 12px 0;
+}
+
+/* UTL navbar: logo left, nav center, CTA right */
+@media (min-width: 992px) {
+  .utl-navbar {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+  }
+
+  .utl-navbar .logo {
+    justify-self: start;
+  }
+
+  .utl-navbar-nav {
+    justify-self: center;
+    display: flex !important;
+    justify-content: center;
+  }
+
+  .utl-navbar .header-cta {
+    justify-self: end;
+  }
+
+  .utl-navbar .navbar-toggler {
+    display: none;
+  }
+}
+
+.utl-nav-links {
+  flex-direction: row;
+  align-items: center;
+}
+
+.header-cta .btn-primary,
+.header-cta-mobile .btn-primary {
+  padding: 12px 25px !important;
+  font-size: 13px;
+  border-radius: 3px;
+  line-height: normal;
+  text-transform: capitalize;
+  color: #fff;
+}
+
+.header-cta-mobile {
+  padding: 15px 0;
+}
+
+@media (max-width: 991px) {
+  .utl-navbar {
+    flex-wrap: wrap;
+  }
+
+  .utl-navbar .logo {
+    order: 1;
+  }
+
+  .utl-navbar .navbar-toggler {
+    order: 2;
+    margin-left: auto;
+  }
+
+  .utl-navbar-nav {
+    order: 3;
+    width: 100%;
+  }
+}
+
+/* Hero banner */
+.hero-banner {
+  position: relative;
+  height: 700px;
+  background-image: url(../images/hero1.png);
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+}
+
+.hero-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.hero-banner .slider-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+}
+
+.hero-banner .slide-title,
+.hero-banner .slide-sub-title {
+  color: #fff;
+}
+
+@media (max-width: 991px) {
+  .hero-banner {
+    height: 550px;
+  }
+}
+
+@media (max-width: 575px) {
+  .hero-banner {
+    height: 450px;
+  }
 }
 
 .header-one .navbar-collapse {

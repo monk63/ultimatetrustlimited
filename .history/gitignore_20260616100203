@@ -1,0 +1,4 @@
+# .gitignore snippet
+.serverCredentials
+.env
+node_modules/

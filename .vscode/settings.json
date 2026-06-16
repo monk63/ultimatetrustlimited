@@ -1,0 +1,6 @@
+{
+  "code-runner.executorMap": {
+    "html": "open http://localhost:8888/ultimatetrustlimited/$fileName"
+  },
+  "code-runner.runInTerminal": false
+}
